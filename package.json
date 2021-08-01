@@ -1,0 +1,17 @@
+{
+  "name": "videostreemin-app",
+  "version": "1.0.0",
+  "description": "this is a video streaming app using web rtc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vyomender Mehta",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "socket.io": "^4.1.3"
+  }
+}
