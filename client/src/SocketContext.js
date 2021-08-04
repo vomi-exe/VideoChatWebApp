@@ -46,11 +46,11 @@ const ContextProvider = ({ children }) => {
         });
 
         peer.signal(call.signal);
-        connectionRef.cuurent = peer;
+        connectionRef.current = peer;
     }
 
     const callUser = (id) => {
-        const peer = new Peer({ initiator: false, trickler: false, stream });
+        const peer = new Peer({ initiator: true, trickler: false, stream });
         peer.on('signal', (data) => {
             socket.emit('calluser', { userToCall: id, signalData: data, from: me, name })
         })
@@ -62,7 +62,7 @@ const ContextProvider = ({ children }) => {
             setCallAccepted(true);
             peer.signal(signal);
         });
-        connectionRef.cuurent = peer;
+        connectionRef.current = peer;
     }
 
     const leaveCall = () => {

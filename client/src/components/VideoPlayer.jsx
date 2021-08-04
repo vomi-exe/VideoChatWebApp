@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
         border: '2px solid black',
         margin: '10px',
     },
+    flipHorizontally: {
+        transform: 'scaleX(-1)',
+    }
 }));
 
 
@@ -38,7 +41,9 @@ export const VideoPlayer = () => {
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md={6}>
                         <Typography varient="h3" gutterBottom>{name || 'Name'}</Typography>
-                        <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
+                        <div >
+                            <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
+                        </div>
                     </Grid>
                 </Paper>
             )}

@@ -1,7 +1,7 @@
 import "./App.css";
 import { Typography, AppBar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Notifications } from "./components/Notification";
+import { Notification } from "./components/Notification";
 import { VideoPlayer } from "./components/VideoPlayer";
 import { Options } from "./components/Options";
 
@@ -40,7 +40,7 @@ function App() {
       </AppBar>
       <VideoPlayer />
       <Options>
-        <Notifications />
+        <Notification />
       </Options>
     </div>
   );
