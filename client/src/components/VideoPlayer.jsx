@@ -33,14 +33,15 @@ export const VideoPlayer = () => {
     const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
     const classes = useStyles();
 
+
     return (
-        <Grid container ClassName={classes.gridContainer}>
+        <Grid container className={classes.gridContainer}>
             {/*OUR OWN VIDEO*/}
             {stream && (
 
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md={6}>
-                        <Typography varient="h3" gutterBottom>{name || 'Name'}</Typography>
+                        <Typography variant="h3" gutterBottom>{name || 'Name'}</Typography>
                         <div >
                             <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
                         </div>

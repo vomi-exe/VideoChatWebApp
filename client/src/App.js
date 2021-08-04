@@ -34,7 +34,7 @@ function App() {
   return (
     <div className={classes.wrapper}>
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography varient="h1" align="center">
+        <Typography variant="h1" align="center">
           Say Hello !
         </Typography>
       </AppBar>

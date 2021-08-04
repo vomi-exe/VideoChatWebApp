@@ -48,6 +48,7 @@ const ContextProvider = ({ children }) => {
         });
 
         peer.signal(call.signal);
+
         connectionRef.current = peer;
     }
 
@@ -64,6 +65,7 @@ const ContextProvider = ({ children }) => {
             setCallAccepted(true);
             peer.signal(signal);
         });
+
         connectionRef.current = peer;
     }
 
