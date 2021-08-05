@@ -1,10 +1,21 @@
 import "./App.css";
-import { Typography, AppBar } from "@material-ui/core";
+import React, { useContext, useState } from "react"
+import { Typography, AppBar, IconButton } from "@material-ui/core";
+import ChatIcon from '@material-ui/icons/Chat';
 import { makeStyles } from "@material-ui/core/styles";
 import { Notification } from "./components/Notification";
 import { VideoPlayer } from "./components/VideoPlayer";
 import { Options } from "./components/Options";
 import Chat from "./components/Chat";
+import { SocketContext } from "./SocketContext";
+import styled from "styled-components";
+
+const Slide = styled.div`
+  position: fixed;
+  right: ${({ open }) => open ? "370px" : "0px"};
+  top: 20px;
+  transition: all 0.4s ease-in-out;
+`;
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -30,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
+
+  const { callAccepted, callEnded } = useContext(SocketContext);
+  const [open, setOpen] = useState(false)
   const classes = useStyles();
 
   return (
@@ -42,8 +56,17 @@ function App() {
       <VideoPlayer />
       <Options >
         <Notification />
-        <Chat />
       </Options>
+      {(callAccepted && !callEnded) && (
+        <div>
+          <Slide open={open} onClick={() => setOpen(!open)}>
+            <IconButton color="secondary" size="medium">
+              <ChatIcon fontSize="large" />
+            </IconButton>
+          </Slide>
+          <Chat open={open} />
+        </div>
+      )}
     </div>
   );
 }

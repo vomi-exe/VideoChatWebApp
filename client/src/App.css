@@ -1,8 +1,27 @@
 body {
-  background: wheat;
+  background: rgb(253, 241, 218);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(150deg, #192027 18%, #15250d 77%);
+  border: 0.5px dotted #6f7676;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5f5d5f;
+}
+::-webkit-scrollbar-track {
+  background: #9ca1ae;
+  border-radius: 0px;
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 }
 
 * {

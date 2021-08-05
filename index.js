@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
   });
 
   //Message the connected user
-  socket.on("sendmessage", (body, room) => {
+  socket.on("sendmessage", (body) => {
     io.emit("message", body);
   });
 
