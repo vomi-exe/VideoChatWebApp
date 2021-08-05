@@ -12,7 +12,7 @@ const io = require("socket.io")(server, {
 
 app.use(cors());
 
-const PORT = process.env.POST || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send("server is running!");
