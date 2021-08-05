@@ -36,6 +36,13 @@ io.on("connection", (socket) => {
   socket.on("answercall", (data) => {
     io.to(data.to).emit("callaccepted", data.signal);
   });
+
+  //Message the connected user
+  socket.on("sendmessage", (body, room) => {
+    io.emit("message", body);
+  });
+
+
 });
 
 server.listen(PORT, (req, res) => {

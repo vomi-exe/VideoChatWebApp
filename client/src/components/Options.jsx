@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Options = ({ children }) => {
+export const Options = ({ children, options }) => {
 
     const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
     const [idToCall, setIdToCall] = useState("");
@@ -73,6 +73,7 @@ export const Options = ({ children }) => {
                                 >
                                     Hang Up
                                 </Button>
+
 
                             ) : (
                                 <Button

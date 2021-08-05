@@ -41,7 +41,7 @@ export const VideoPlayer = () => {
 
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h3" gutterBottom>{name || 'Name'}</Typography>
+                        <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
                         <div >
                             <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
                         </div>
@@ -52,7 +52,7 @@ export const VideoPlayer = () => {
             {(callAccepted && !callEnded) && (
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md={6}>
-                        <Typography varient="h3" gutterBottom>{call.name || "Name"}</Typography>
+                        <Typography varient="h2" gutterBottom>{call.name || "Name"}</Typography>
                         <video playsInline ref={userVideo} autoPlay className={classes.video} />
                     </Grid>
                 </Paper>
