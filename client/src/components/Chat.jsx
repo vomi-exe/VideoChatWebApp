@@ -102,7 +102,7 @@ function Chat() {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect("http://localhost:5000");
+    socketRef.current = io.connect("https://sayhellovideochatapp.herokuapp.com/");
 
     socketRef.current.on("me", id => {
       setYourId(id);
