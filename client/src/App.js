@@ -15,6 +15,7 @@ const Slide = styled.div`
   right: ${({ open }) => open ? "370px" : "0px"};
   top: 20px;
   transition: all 0.4s ease-in-out;
+  z-index: 1000;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     width: "600px",
-    border: "2px solid black",
+    border: "2px solid D5D5D5",
 
     [theme.breakpoints.down("xs")]: {
       width: "90%",

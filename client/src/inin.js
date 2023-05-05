@@ -4,7 +4,7 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('http://localhost:5000');
+const socket = io('web-production-9191b.up.railway.app');
 
 const ContextProvider = ({ children }) => {
 

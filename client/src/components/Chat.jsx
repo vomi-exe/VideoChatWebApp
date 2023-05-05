@@ -11,6 +11,7 @@ const Outer = styled.div`
   background: rgba(247, 252, 255, 0.502);
   padding-left: ${({ open }) => open ? "20px" : "-10px"};
   border-radius: 10px;
+  z-index: 1000;
 `;
 
 
@@ -65,6 +66,9 @@ const Button = styled.button`
   font-size: 17px;
   margin-top: 10px;
   cursor: pointer;
+  &:hover {
+    background-color: #FFBFF8;
+  }
 
 `;
 
@@ -115,7 +119,7 @@ function Chat({ open }) {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect("https://sayhellovideochatapp.herokuapp.com/");
+    socketRef.current = io.connect("web-production-9191b.up.railway.app");
 
     socketRef.current.on("me", id => {
       setYourId(id);
@@ -173,7 +177,7 @@ function Chat({ open }) {
         </Container>
         <Form onSubmit={sendMessage} >
           <TextArea value={message} onChange={handleChange} placeholder="Say Something .." />
-          <Button>Send</Button>
+          <Button >Send</Button>
         </Form>
       </Page>
     </Outer>
